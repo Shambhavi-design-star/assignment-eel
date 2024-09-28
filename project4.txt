@@ -1,0 +1,40 @@
+//This example shows how you can use if..else to "open a door" if the user enters the correct code:
+#include <stdio.h>
+
+int main()
+{
+    int doorcode= 1;
+    printf("Hello! Please enter the code: ", doorcode);
+    scanf("%d", &doorcode);
+//The door will open only if the entered code is matching with the stored code.
+    if(doorcode==1)
+    {
+        printf("The code is CORRECT! Welcome!");
+    }
+    else if(doorcode!= 1)
+    {
+     printf("The code is INCORRECT!\n");
+//This simply asks the user a verification question if they want to reset the password.
+     int b;
+     printf("Do you want to reset password? ENTER 1 for yes and 0 for no.\n",b);
+     scanf("%d",&b);
+     if(b==1)
+     {
+         printf("First answer this security question. Is green your favourite color?",b);
+         scanf("%d",&b);
+//And accordigly a reset password mail is sent to the user.
+         if(b==1){
+           printf("Reset password has been sent on email.");
+         }
+         else{
+           printf("Wrong answer.");
+         }
+     }
+//If the user input doesn't match, they have to try again later.
+     else
+     {
+         printf("Try again later.");
+     }
+}
+return 0;
+}
